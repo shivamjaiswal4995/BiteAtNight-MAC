@@ -1,0 +1,73 @@
+<!-- <mat-card class="example-card">
+    <mat-card-header>
+
+        <mat-card-title style="font-size : 30px">{{userName}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <h4>{{userEmail}}</h4>
+        <h4>{{contactNo}}</h4>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button>Edit</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Manage Address</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+        <mat-list-item *ngFor="let address of addresses">
+            <app-address [address]="address"></app-address>
+        </mat-list-item>
+    </mat-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Previous Orders</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+        <mat-list-item *ngFor="let order of previousOrders">
+            <app-previous-order [order]="order"></app-previous-order>
+        </mat-list-item>
+    </mat-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>Offers</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-offer></app-offer>
+</mat-expansion-panel> -->
+
+<!-- <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Referrals</mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-referral></app-referral>
+    </mat-expansion-panel> -->
+
+    <mat-sidenav-container class="myAccount-sidenav-container ">
+
+        <mat-sidenav #sidenav class="myAccount-sidenav mat-elevation-z10" 
+        [opened]="!isScreenSmall()"
+                    [mode]="isScreenSmall() ? 'over' : 'side'">
+        <mat-nav-list *ngFor = "let option of options">
+            <mat-list-item>
+            <a matLine [routerLink]="[option.link]">{{option.name}}</a>
+            </mat-list-item>
+        </mat-nav-list>
+        </mat-sidenav>
+      
+        <mat-sidenav-content class="myAccount-sidenav-content">
+          <mat-card>
+            <router-outlet></router-outlet>
+          </mat-card> 
+        </mat-sidenav-content>
+       
+      </mat-sidenav-container>

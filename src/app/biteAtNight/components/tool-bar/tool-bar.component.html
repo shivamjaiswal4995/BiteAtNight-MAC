@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <!-- <button class="sidenav-toggle" (click)="sidenavToggle.emit()" mat-button> //what is use of this?
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span>
+    <button mat-button (click)="showAllItems()"><mat-icon>home</mat-icon></button>
+  </span>
+  <span class="example-spacer"></span>
+  <span>BiteAtNight</span>
+  <span class="example-spacer"></span>
+  <span>
+    <button mat-button (click) = "showCart()"><mat-icon>cart</mat-icon></button> 
+  </span>
+<!-- <p>/*TODO add showcart() method in component.ts..*/</p>   -->
+  <button mat-button [matMenuTriggerFor]="menu">
+    {{_userName}}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="showMyAccount()">My Account</button>
+    <button mat-menu-item (click)="showFaqs()">FAQs</button>
+    <button mat-menu-item (click)="logOut()">Log out</button>
+  </mat-menu>
+  <!-- <p>TODO add necessary methods in components as well as services.</p> -->
+  </mat-toolbar-row>
+
+  
+  <mat-toolbar-row>
+<span class="example-spacer"></span>
+<span>TagLine</span>
+<span class = "example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>

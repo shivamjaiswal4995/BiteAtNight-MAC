@@ -1,0 +1,253 @@
+<!-- <mat-card>
+  <table mat-table [dataSource]="data">
+
+     Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" 
+
+     Position Column 
+     <ng-container matColumnDef="itemName">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.itemName}} </td>
+    </ng-container>
+
+     Name Column
+
+
+     Weight Column
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+
+      <td mat-cell *matCellDef="let element">
+        <div class="quantity buttons_added">
+          <input type="button" value="-" class="minus" (click)="minus()">
+          <input type="number" step="1" min="0" max="" name="quantity" value={{element.count}} title="Qty" class="input-text qty text"
+            size="4" pattern="" inputmode="">
+          <input type="button" value="+" class="plus" (click)="plus()">
+        </div>
+      </td>
+    </ng-container> 
+
+    Symbol Column 
+   <ng-container matColumnDef="totalPrice">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.price*element.count}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+<app-offer></app-offer>
+<mat-card>
+  <mat-card-title>
+    <strong> Bill </strong>
+  </mat-card-title>
+  <mat-card-content>
+    <div class="bill-display">
+      <p>Item Total</p>
+      <p>{{billObj.totalPrice}}</p>
+    </div>
+    <div class="bill-display">
+      <p>GST</p>
+      <p>{{billObj.gst}}</p>
+    </div>
+    <div class="bill-display">
+      <p>Delivery Charges</p>
+      <p>{{billObj.deliveryCharges}}</p>
+    </div>
+    <div class="bill-display">
+      <p>Coupon Discount</p>
+      <p>{{billObj.couponDiscount}}</p>
+    </div>
+    <div class="bill-display">
+      <p>To Pay</p>
+      <p>{{billObj.toPay}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+<app-address></app-address>
+<mat-card>
+  <mat-card-actions align="end">
+    <button class="button" mat-stroked-button (click)="placeOrder()" color="green">
+      <strong>Place Order</strong>
+    </button>
+  </mat-card-actions>
+</mat-card>
+ <mat-elevation-z10></mat-elevation-z10>
+
+
+<mat-sidenav-container class="cart-sidenav-container">
+
+  <mat-sidenav #sidenav class="cart-sidenav" >
+    <h3>hehehheheh</h3>
+  <app-address></app-address>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="cart-sidenav-content">
+    <mat-card>
+      <table mat-table [dataSource]="data">
+    
+        
+        <ng-container matColumnDef="itemName">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.itemName}} </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+    
+          <td mat-cell *matCellDef="let element">
+            <div class="quantity buttons_added">
+              <input type="button" value="-" class="minus" (click)="minus(element.itemId)">
+              <input type="number" step="1" min="0" max="" name="quantity" value={{element.count}} title="Qty" class="input-text qty text"
+                size="4" pattern="" inputmode="">
+              <input type="button" value="+" class="plus" (click)="plus(element.itemId)">
+            </div>
+          </td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="totalPrice">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.price*element.count}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card>
+    <app-offer></app-offer>
+    <mat-card>
+      <mat-card-title>
+        <strong> Bill </strong>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="bill-display">
+          <p>Item Total</p>
+          <p>{{billObj.totalPrice}}</p>
+        </div>
+        <div class="bill-display">
+          <p>GST</p>
+          <p>{{billObj.gst}}</p>
+        </div>
+        <div class="bill-display">
+          <p>Delivery Charges</p>
+          <p>{{billObj.deliveryCharges}}</p>
+        </div>
+        <div class="bill-display">
+          <p>Coupon Discount</p>
+          <p>{{billObj.couponDiscount}}</p>
+        </div>
+        <div class="bill-display">
+          <p>To Pay</p>
+          <p>{{billObj.toPay}}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-actions align="end">
+        <button class="button" mat-stroked-button (click)="placeOrder()" color="green">
+          <strong>Place Order</strong>
+        </button>
+      </mat-card-actions>
+    </mat-card> 
+  </mat-sidenav-content>
+ 
+</mat-sidenav-container> -->
+
+<div class="small-demo">
+  <mat-card class="mat-card">
+    <mat-card-title class="mat-card-title">Cart</mat-card-title>
+    <mat-card-subtitle class="mat-card-subtitle">Have a good experience with BiteAtNight
+    </mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <div fxfill="" fxlayout="column" style="height: 100%;margin: 0px;min-height: 100%;min-width: 100%;width: 100%;flex-direction: column;box-sizing: border-box;display: flex;">
+        <div fxflex="" fxlayout="row" style="flex: 1 1 auto; height: 100%; box-sizing: border-box; flex-direction: row; display: flex;">
+          <div class="one" fxflex="70" fxlayoutalign="center center">
+            <app-address></app-address>
+          </div>
+          <div class="two" fxflex="30" fxlayoutalign="center center">
+            <mat-card>
+              <table mat-table [dataSource]="data">
+
+
+                <ng-container matColumnDef="itemName">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.itemName}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="quantity">
+                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+
+                  <td mat-cell *matCellDef="let element">
+                    <div class="quantity buttons_added">
+                      <input type="button" value="-" class="minus" (click)="minus(element.itemId)">
+                      <input type="number" step="1" min="0" max="" name="quantity" value={{element.count}} title="Qty"
+                        class="input-text qty text" size="4" pattern="" inputmode="">
+                      <input type="button" value="+" class="plus" (click)="plus(element.itemId)">
+                    </div>
+                  </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="totalPrice">
+                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                  <td mat-cell *matCellDef="let element"> {{element.price*element.count}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </mat-card>
+            <app-offer></app-offer>
+            <mat-card>
+              <mat-card-title>
+                <strong> Bill </strong>
+              </mat-card-title>
+              <mat-card-content>
+                <div class="bill-display">
+                  <p>Item Total</p>
+                  <p>{{billObj.totalPrice}}</p>
+                </div>
+                <div class="bill-display">
+                  <p>GST</p>
+                  <p>{{billObj.gst}}</p>
+                </div>
+                <div class="bill-display">
+                  <p>Delivery Charges</p>
+                  <p>{{billObj.deliveryCharges}}</p>
+                </div>
+                <div class="bill-display">
+                  <p>Coupon Discount</p>
+                  <p>{{billObj.couponDiscount}}</p>
+                </div>
+                <div class="bill-display">
+                  <p>To Pay</p>
+                  <p>{{billObj.toPay}}</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <mat-card>
+              <mat-card-actions align="end">
+                <button class="button" mat-stroked-button (click)="placeOrder()" color="green">
+                  <strong>Place Order</strong>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-footer class="bottomPad mat-card-footer">
+      <div class="hint"></div>
+    </mat-card-footer>
+  </mat-card>
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

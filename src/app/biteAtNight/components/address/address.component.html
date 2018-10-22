@@ -1,0 +1,56 @@
+<div class = "delivery-address-description" *ngIf = "isAddressPresent">
+  <h2>Select Delivery Address</h2>
+  <h5>Please select one of the saved address or add new address</h5>
+</div>
+
+<div class = "delivery-address-description" *ngIf = "!isAddressPresent">
+<h2>Add Delivery Address</h2>
+<h5>You seem to be new on BiteAtNight</h5>
+<h5>Have a great meal!</h5>
+</div>
+
+<mat-grid-list cols="2" rowHeight="250px" class="grid-list" *ngIf = "isAddressPresent">
+  <mat-grid-tile *ngFor="let address of addressesOfUser" [colspan]="1" [rowspan]="1">
+    <mat-card class = "address-card">
+      <mat-card-title>
+        {{address.type}}
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          {{address.houseNo}}, {{address.landmark}}, {{address.area}}
+          {{address.city}}, {{address.state}}, {{address.pincode}}
+        </p>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="openEditAddressView(address.addressId)">EDIT</button>
+        <button mat-button (click)="deleteAddress(address.addressId)">DELETE</button>
+        <button mat-button (click)="addDeliveryAddress(address.addressId)">DELIVER HERE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class = "address-card">
+      <mat-card-title>
+        <strong>Add New Address</strong>
+      </mat-card-title>
+      <mat-card-actions>
+        <button mat-button (click)="addAddress()">ADD NEW</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols = "2" rowHeight = "250px" class = "grid-list" *ngIf = "!isAddressPresent">
+<mat-grid-tile>
+  <mat-card class = "address-card">
+    <mat-card-title>
+      <strong>Add New Address</strong>
+    </mat-card-title>
+    <mat-card-actions>
+      <button mat-button (click)="addAddress()">ADD NEW</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-grid-tile>
+</mat-grid-list>

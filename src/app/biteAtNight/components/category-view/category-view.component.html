@@ -1,0 +1,25 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor = "let itemsByCategoryObject of itemsByCategory" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       {{itemsByCategoryObject._id.category}}
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="4" rowHeight="400px">
+      <mat-grid-tile
+          *ngFor = "let item of itemsByCategoryObject.items"
+          [colspan]="1"
+          [rowspan]="1"
+      >
+        <app-item-view [item] = "item" ></app-item-view> 
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+
+  
+  
+</mat-accordion>
+
+  

@@ -1,0 +1,21 @@
+<div class="keep-c-note-editor-form">
+    <mat-form-field>
+      <input [(ngModel)]="address.houseNo" matInput name="houseNo" placeholder="HouseNo" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea [(ngModel)]="address.landmark" matInput name="landmark" placeholder="Landmark"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <textarea [(ngModel)]="address.area" matInput name="area" placeholder="Area"></textarea>
+      </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select Address Type" [(value)]="selected">
+        <mat-option *ngFor="let addressType of addressTypes" [value]="addressType.viewValue">
+          {{ addressType.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="keep-c-save-btn-wrapper">
+    <button mat-button (click)="editAddress()">Save</button>
+  </div>

@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content>
+      <!-- <p>
+         items of order should be displayed here with quantity of each.
+      </p> -->
+      <h3>`Rs.${{order.payable_Amount]}`</h3>
+      <h4>order.orderedOn</h4>
+    </mat-card-content>
+    <mat-card-actions align = "middle">
+      <button mat-button (click)="reorder(order.orderId)">Reorder</button>
+    </mat-card-actions>
+  </mat-card>
+
+<!-- <p> while clicking any where on this order card, show orderView must open in
+   which all the details of order will
+  be available
+</p> -->

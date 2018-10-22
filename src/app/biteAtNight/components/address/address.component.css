@@ -1,0 +1,17 @@
+.grid-list{
+    margin-top: 25px;
+}
+
+.delivery-address-description{
+    margin-top: 25px;
+}
+
+.mat-grid-tile{
+    margin-left : 20px;
+}
+
+.address-card {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 20px;
+  }
