@@ -38,10 +38,11 @@ export class AuthenticationService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).map((res) => res['isAuthenticated']).toPromise();
   }
-  //setting a property in header named Authorization and its value is bearer <token>,
+  //setting a p9roperty in header named Authorization and its value is bearer <token>,
   // token is sent in this way through request...
 
   registerUser(data) {
+    console.log(data);
     return this._http.post(`${this._authUrl}users/register`, data);
   }
   //as we are mapping response to request in line no.37, why we are not doing it here?

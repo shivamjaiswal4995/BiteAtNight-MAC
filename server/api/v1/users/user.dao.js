@@ -15,9 +15,10 @@ const addUser = (userObj, done) => {
         password: hashedPassword,
         contact: userObj.contact
     });
-
+    console.log(newUser);
     newUser.save((err, savedUser) => {
         if(err) {
+            console.log("error occured at usr dao");
             return done(err);
         } else {
             // generating token

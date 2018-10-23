@@ -9,9 +9,9 @@ const userSchema = new mongoose.Schema({
     contact: {type: Number, required: true},
     addresses: [{}],
     orders: [{}],
-    cart : [{}],
-    referralCode : {type: String, required: true},
-    referrralPoints : {type : Number, required : true}
+    cart : [{}]
+    // referralCode : {type: String, required: true},
+    // referrralPoints : {type : Number, required : true}
 });
 
 userSchema.index({userId: 1, userName: 1, userEmail: 1}, {unique: true});
